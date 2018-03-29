@@ -1,0 +1,30 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: fuseeap7
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: fuseeap7
+    spec:
+      containers:
+      - name: s090
+        image: jbossacr.azurecr.io/jboss-fuse-7-tech-preview/fuse-eap-openshift:v1
+        ports:
+        - containerPort: 10090
+          name: s090
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fuseeap7
+  labels:
+        app: fuseeap7
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 9990
+  selector:
+    app: fuseeap7
