@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: dep_s090
+  name: deps090
 spec:
   replicas: 2
   template:
@@ -10,14 +10,14 @@ spec:
         app: s090
     spec:
       containers:
-      - name: con_s090
+      - name: cons090
         image: jbossacr.azurecr.io/jboss-fuse-7-tech-preview/fuse-eap-openshift:v1
         
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: svc_s090
+  name: svcs090
   labels:
         app: s090
 spec:
@@ -25,4 +25,4 @@ spec:
   ports:
   - port: 9991
   selector:
-    app: dep_s090
+    app: deps090
