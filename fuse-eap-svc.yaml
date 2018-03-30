@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svcs090
+  labels:
+        app: s090
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 9991
+  selector:
+    app: deps090
