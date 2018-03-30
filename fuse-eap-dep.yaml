@@ -14,4 +14,4 @@ spec:
       - name: cons090
         image: jbossacr.azurecr.io/jboss-fuse-7-tech-preview/fuse-eap-openshift:v1
         ports: 
-        - containerPort: 9991
+        - containerPort: 9990
