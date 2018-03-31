@@ -10,4 +10,4 @@ spec:
   ports:
   - port: 9990
   selector:
-    app: deps090
+    app: s090
